@@ -53,7 +53,7 @@ namespace WebApplication1
             //initialize swagger UI for documentation
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ticket API v1");
+                c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Ticket API v1");
             });
 
 

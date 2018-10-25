@@ -32,7 +32,7 @@ namespace WebApplication1.Controllers
             return _context.TicketItems.AsNoTracking().ToList();
         }
 
-        //   api/[Controller]/{id}
+        /* route  api/[Controller]/{id}
         [HttpGet("{id}",Name = "GetTicket")]
         public IActionResult GetById(long id)
         {
@@ -46,7 +46,8 @@ namespace WebApplication1.Controllers
             return new ObjectResult(ticket);//200
         }
 
-        [HttpPost] //      route  api/[controller]/create
+/*	route /api/[controller]/create								*/
+        [HttpPost] 
         public IActionResult Create([FromBody]TicketItem ticket)
         {
             if (ticket==null)
@@ -60,6 +61,8 @@ namespace WebApplication1.Controllers
             return CreatedAtRoute("GetTicket", new { id = ticket.Id },ticket);
         }
 
+	
+	/* route /api/[controller]/Update/id									*/
         [HttpPut("{id}")]
         public IActionResult Update(long id,[FromBody] TicketItem ticket)
         {
@@ -85,6 +88,8 @@ namespace WebApplication1.Controllers
 
         }
 
+
+	/* route /api/[controller]/Delete/id									*/
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {

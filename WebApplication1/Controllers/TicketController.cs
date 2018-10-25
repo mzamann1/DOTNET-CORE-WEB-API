@@ -32,7 +32,7 @@ namespace WebApplication1.Controllers
             return _context.TicketItems.AsNoTracking().ToList();
         }
 
-        /* route  api/[Controller]/{id}
+        /* route  api/[Controller]/{id} 		*/
         [HttpGet("{id}",Name = "GetTicket")]
         public IActionResult GetById(long id)
         {

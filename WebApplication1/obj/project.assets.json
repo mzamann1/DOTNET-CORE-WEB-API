@@ -12225,11 +12225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zaman\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Zaman\\Documents\\Visual Studio 2017\\Projects\\DOTNET CORE WEB API\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\Zaman\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\Zaman\\Documents\\Visual Studio 2017\\Projects\\DOTNET CORE WEB API\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\Zaman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zaman\\Documents\\Visual Studio 2017\\Projects\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\Zaman\\Documents\\Visual Studio 2017\\Projects\\DOTNET CORE WEB API\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

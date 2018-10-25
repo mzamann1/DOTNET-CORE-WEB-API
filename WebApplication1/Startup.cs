@@ -17,6 +17,7 @@ namespace WebApplication1
     {
         public Startup(IConfiguration configuration)
         {
+            //loads configuration
             Configuration = configuration;
         }
 
@@ -26,6 +27,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //Regisering In-MemoryDatabase Service
             services.AddDbContext<TicketContext>(
                 opt => opt.UseInMemoryDatabase("TicketList")
             );

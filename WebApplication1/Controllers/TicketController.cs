@@ -10,6 +10,7 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class TicketController : ControllerBase
     {
         private TicketContext _context;
@@ -18,9 +19,9 @@ namespace WebApplication1.Controllers
         {
             _context = context;
 
-            if (_context.TicketItems.Count() == 0)
+            if (_context.TicketItems.Count() == 0) //if no item in database
             {
-                _context.TicketItems.Add(new TicketItem { Concert="Beyonce"});
+                _context.TicketItems.Add(new TicketItem { Concert="Beyonce"}); //create new one 
                 _context.SaveChanges();
             }
         }
@@ -30,10 +31,12 @@ namespace WebApplication1.Controllers
         {
             return _context.TicketItems.AsNoTracking().ToList();
         }
+
+        //   api/[Controller]/{id}
         [HttpGet("{id}",Name = "GetTicket")]
         public IActionResult GetById(long id)
         {
-            var ticket = _context.TicketItems.FirstOrDefault(t => t.Id == id);
+            var ticket = _context.TicketItems.FirstOrDefault(t => t.Id == id); //searching field matching with id
 
             if (ticket ==null)
             {
@@ -43,7 +46,7 @@ namespace WebApplication1.Controllers
             return new ObjectResult(ticket);//200
         }
 
-        [HttpPost]
+        [HttpPost] //      route /[controller]/create
         public IActionResult Create([FromBody]TicketItem ticket)
         {
             if (ticket==null)

@@ -46,7 +46,7 @@ namespace WebApplication1.Controllers
             return new ObjectResult(ticket);//200
         }
 
-        [HttpPost] //      route /[controller]/create
+        [HttpPost] //      route  api/[controller]/create
         public IActionResult Create([FromBody]TicketItem ticket)
         {
             if (ticket==null)
@@ -58,6 +58,47 @@ namespace WebApplication1.Controllers
 
             //return "/GetTicket/" + ticket.id
             return CreatedAtRoute("GetTicket", new { id = ticket.Id },ticket);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id,[FromBody] TicketItem ticket)
+        {
+            if (ticket == null || ticket.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var _ticket = _context.TicketItems.FirstOrDefault(t => t.Id == id);
+
+            if (_ticket ==null)
+            {
+                return NotFound();
+            }
+
+            _ticket.Concert = ticket.Concert;
+            _ticket.Available = ticket.Available;
+            _ticket.Artist = ticket.Artist;
+            _context.TicketItems.Update(_ticket);
+
+            _context.SaveChanges();
+            return new NoContentResult();
+
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var ticket = _context.TicketItems.FirstOrDefault(t => t.Id == id);
+
+
+            if  (ticket == null)
+            {
+                return NotFound();
+            }
+
+            _context.TicketItems.Remove(ticket);
+            _context.SaveChanges();
+            return new NoContentResult();
         }
     }
 }

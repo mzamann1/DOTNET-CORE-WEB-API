@@ -62,7 +62,7 @@ namespace WebApplication1.Controllers
         }
 
 	
-	/* route /api/[controller]/Update/id									*/
+	/* route /api/[controller]/id									*/
         [HttpPut("{id}")]
         public IActionResult Update(long id,[FromBody] TicketItem ticket)
         {
@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
         }
 
 
-	/* route /api/[controller]/Delete/id									*/
+	/* route /api/[controller]/id									*/
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {

@@ -55,8 +55,6 @@ namespace WebApplication1
             {
                 c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Ticket API v1");
             });
-
-
             app.UseMvc();
         }
     }
